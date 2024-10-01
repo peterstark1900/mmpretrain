@@ -41,6 +41,7 @@ def resize_pos_embed(pos_embed,
     assert pos_embed.ndim == 3, 'shape of pos_embed must be [1, L, C]'
     _, L, C = pos_embed.shape
     src_h, src_w = src_shape
+    num_extra_tokens=1
     assert L == src_h * src_w + num_extra_tokens, \
         f"The length of `pos_embed` ({L}) doesn't match the expected " \
         f'shape ({src_h}*{src_w}+{num_extra_tokens}). Please check the' \
